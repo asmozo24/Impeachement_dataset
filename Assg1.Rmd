@@ -1,0 +1,63 @@
+---
+title: "DATA607_Assg1"
+
+##This assignment 1 is about Loading Data into a Data Frame from provided datasets on fivethirtyeight.com: My pick was, "Do Americans Support Impeaching Trump?" Which shows poll of data surveying America opinion's on wheter president Donald Trump should be removed from the office. This dataset account for for each poll's quality, recency and sample size, from Oct. 1, 2019, to Feb. 13, 2020. 
+
+author: "Alexis Mekueko"
+date: "9/7/2020"
+output: html_document
+---
+
+## Setup
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## R Packages
+```{r load-packages, message=FALSE}
+library(tidyverse) #loading all library needed for this assignment
+library(readxl)
+library(plyr)
+```
+
+## Importing Data
+```{r Import data frame}
+setwd("~/R/DATA607_Assg1_Trump Impeachment-Polls") #set working directory which has imported data frame
+dir() # what is in the directory
+getwd()  # what is the current working directory
+git clone https://github.com/asmozo24/Impeachement_dataset.git
+
+```
+
+##Loading Data
+```{r loading impeachement data}
+impeachment_topline # loading the data, this is the data that generate the plot
+str(impeachment_topline) # what is the structure of the data, just to have a better look
+```
+
+##Making Change in Data
+```{r making change in impeachement data}
+Impeachement_Data <- impeachment_topline # changing the name
+Impeachement_Data # checking if the name was effective
+```
+
+##Handling missings data
+```{r Missing data in impeachement data}
+is.na(Impeachement_Data) # checking if there is a missing data in the dataset
+sum(is.na(Impeachement_Data)) # file to big, checking the sum of all missing data (return is 16 missing data)
+na.omit(Impeachement_Data) # delete/remove the missings data because it is an imcomplete observation
+Impeachment_Data %>% rename(President_Name = president) # not working 
+rename(Impeachement_Data, c("president" = "President_Name", "subgroup" = "Voters", "party" = "Voters_Party", "category_group" = "Voters_Opinion", "modeldate" = "Model_Date", "yes_estimate" = "Yes_Percent", "no_estimate" = "No_Percent")) # Renaming variables
+```
+
+
+##Making Plots
+```{r plot-Impeachement_Data}
+
+ggplot(data = Impeachement_Data, aes(x = timestamp, y = Yes_Percent)) + 
+  geom_point() # no working ..data to big
+plot(timestamp, 'Yes_%', main = "Polynomial Regression", las = 1)
+
+```
+
