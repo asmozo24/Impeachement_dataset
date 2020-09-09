@@ -1,9 +1,9 @@
-### Impeachement_dataset
-Dataset for President Donald Trump
+---
+files:
+  - https://docs.google.com/spreadsheets/d/e/2PACX-1vS15V8lYPUc_OH4OBss6d8NPGRnCH1lAlBBY4FYWcK6cm6iVM8dXE_4KMFOUybRe-cVvDg7ap46FPig/pub?gid=39569490&single=true&output=csv&/impeachment-polls.csv
+  - https://projects.fivethirtyeight.com/impeachment-polls/impeachment_topline.csv
+---
 
-This dataset was collected from https://data.fivethirtyeight.com/ for course assignment:
+# Impeachment Polls
 
-    * This dataset is about impeachment-polls to answer the following question: Do Americans Support Impeaching Trump? 
-    * More information on how the data model can be found here, https://projects.fivethirtyeight.com/impeachment-polls/ .
-    * Additional details can be found here, https://fivethirtyeight.com/features/how-were-tracking-donald-trumps-approval-ratings/ . 
-    
+This file contains links to the data behind [Do Americans Support Impeaching Trump?](https://fivethirtyeight.com/features/do-americans-support-impeaching-president-trump/)
